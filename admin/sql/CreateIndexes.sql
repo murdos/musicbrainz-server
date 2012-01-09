@@ -4,7 +4,6 @@ BEGIN;
 CREATE UNIQUE INDEX artist_idx_gid ON artist (gid);
 CREATE INDEX artist_idx_name ON artist (name);
 CREATE INDEX artist_idx_sort_name ON artist (sort_name);
-CREATE INDEX artist_idx_ipi_code ON artist (ipi_code);
 
 CREATE INDEX artist_alias_idx_artist ON artist_alias (artist);
 CREATE UNIQUE INDEX artist_alias_idx_locale_artist ON artist_alias (artist, locale);
@@ -60,6 +59,8 @@ CREATE INDEX edit_work_idx ON edit_work (work);
 CREATE INDEX edit_url_idx ON edit_url (url);
 
 CREATE INDEX edit_note_idx_edit ON edit_note (edit);
+
+CREATE UNIQUE INDEX ipi_idx_ipi_code ON ipi (ipi_code);
 
 CREATE INDEX isrc_idx_isrc ON isrc (isrc);
 CREATE INDEX isrc_idx_recording ON isrc (recording);
@@ -143,7 +144,6 @@ CREATE INDEX link_idx_type_attr ON link (link_type, attribute_count);
 CREATE UNIQUE INDEX label_idx_gid ON label (gid);
 CREATE INDEX label_idx_name ON label (name);
 CREATE INDEX label_idx_sort_name ON label (sort_name);
-CREATE INDEX label_idx_ipi_code ON label (ipi_code);
 
 CREATE INDEX label_alias_idx_label ON label_alias (label);
 CREATE UNIQUE INDEX label_alias_idx_locale_label ON label_alias (label, locale);

@@ -8,6 +8,7 @@ ALTER TABLE artist_annotation ADD CONSTRAINT artist_annotation_pkey PRIMARY KEY 
 ALTER TABLE artist_credit ADD CONSTRAINT artist_credit_pkey PRIMARY KEY (id);
 ALTER TABLE artist_credit_name ADD CONSTRAINT artist_credit_name_pkey PRIMARY KEY (artist_credit, position);
 ALTER TABLE artist_gid_redirect ADD CONSTRAINT artist_gid_redirect_pkey PRIMARY KEY (gid);
+ALTER TABLE artist_ipi ADD CONSTRAINT artist_ipi_pkey PRIMARY KEY (artist, ipi);
 ALTER TABLE artist_meta ADD CONSTRAINT artist_meta_pkey PRIMARY KEY (id);
 ALTER TABLE artist_name ADD CONSTRAINT artist_name_pkey PRIMARY KEY (id);
 ALTER TABLE artist_rating_raw ADD CONSTRAINT artist_rating_raw_pkey PRIMARY KEY (artist, editor);
@@ -41,6 +42,7 @@ ALTER TABLE editor_watch_preferences ADD CONSTRAINT editor_watch_preferences_pke
 ALTER TABLE editor_watch_release_group_type ADD CONSTRAINT editor_watch_release_group_type_pkey PRIMARY KEY (editor, release_group_type);
 ALTER TABLE editor_watch_release_status ADD CONSTRAINT editor_watch_release_status_pkey PRIMARY KEY (editor, release_status);
 ALTER TABLE gender ADD CONSTRAINT gender_pkey PRIMARY KEY (id);
+ALTER TABLE ipi ADD CONSTRAINT ipi_pkey PRIMARY KEY (id);
 ALTER TABLE isrc ADD CONSTRAINT isrc_pkey PRIMARY KEY (id);
 ALTER TABLE l_artist_artist ADD CONSTRAINT l_artist_artist_pkey PRIMARY KEY (id);
 ALTER TABLE l_artist_label ADD CONSTRAINT l_artist_label_pkey PRIMARY KEY (id);
@@ -74,6 +76,7 @@ ALTER TABLE label ADD CONSTRAINT label_pkey PRIMARY KEY (id);
 ALTER TABLE label_alias ADD CONSTRAINT label_alias_pkey PRIMARY KEY (id);
 ALTER TABLE label_annotation ADD CONSTRAINT label_annotation_pkey PRIMARY KEY (label, annotation);
 ALTER TABLE label_gid_redirect ADD CONSTRAINT label_gid_redirect_pkey PRIMARY KEY (gid);
+ALTER TABLE label_ipi ADD CONSTRAINT label_ipi_pkey PRIMARY KEY (label, ipi);
 ALTER TABLE label_meta ADD CONSTRAINT label_meta_pkey PRIMARY KEY (id);
 ALTER TABLE label_name ADD CONSTRAINT label_name_pkey PRIMARY KEY (id);
 ALTER TABLE label_rating_raw ADD CONSTRAINT label_rating_raw_pkey PRIMARY KEY (label, editor);

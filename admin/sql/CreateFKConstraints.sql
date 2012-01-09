@@ -78,6 +78,16 @@ ALTER TABLE artist_gid_redirect
    FOREIGN KEY (new_id)
    REFERENCES artist(id);
 
+ALTER TABLE artist_ipi
+   ADD CONSTRAINT artist_ipi_fk_artist
+   FOREIGN KEY (artist)
+   REFERENCES artist(id);
+
+ALTER TABLE artist_ipi
+   ADD CONSTRAINT artist_ipi_fk_ipi
+   FOREIGN KEY (ipi)
+   REFERENCES ipi(id);
+
 ALTER TABLE artist_meta
    ADD CONSTRAINT artist_meta_fk_id
    FOREIGN KEY (id)
@@ -795,6 +805,16 @@ ALTER TABLE label_gid_redirect
    ADD CONSTRAINT label_gid_redirect_fk_new_id
    FOREIGN KEY (new_id)
    REFERENCES label(id);
+
+ALTER TABLE label_ipi
+   ADD CONSTRAINT label_ipi_fk_label
+   FOREIGN KEY (label)
+   REFERENCES label(id);
+
+ALTER TABLE label_ipi
+   ADD CONSTRAINT label_ipi_fk_ipi
+   FOREIGN KEY (ipi)
+   REFERENCES ipi(id);
 
 ALTER TABLE label_meta
    ADD CONSTRAINT label_meta_fk_id

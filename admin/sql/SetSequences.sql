@@ -21,6 +21,7 @@ SELECT setval('editor_subscribe_artist_id_seq', (SELECT MAX(id) FROM editor_subs
 SELECT setval('editor_subscribe_label_id_seq', (SELECT MAX(id) FROM editor_subscribe_label));
 SELECT setval('editor_subscribe_editor_id_seq', (SELECT MAX(id) FROM editor_subscribe_editor));
 SELECT setval('gender_id_seq', (SELECT MAX(id) FROM gender));
+SELECT setval('ipi_id_seq', (SELECT MAX(id) FROM ipi));
 SELECT setval('isrc_id_seq', (SELECT MAX(id) FROM isrc));
 SELECT setval('l_artist_artist_id_seq', (SELECT MAX(id) FROM l_artist_artist));
 SELECT setval('l_artist_label_id_seq', (SELECT MAX(id) FROM l_artist_label));
