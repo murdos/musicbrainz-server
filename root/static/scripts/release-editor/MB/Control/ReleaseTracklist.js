@@ -462,6 +462,9 @@ MB.Control.ReleaseDisc = function (parent, $disc) {
         {
             self.edits.saveEdits (self.tracklist, self.tracks);
         }
+
+        var clear_title = true;
+        self.updateDiscTitle (clear_title);
     };
 
     self.getReleaseArtist = function () {
@@ -665,9 +668,16 @@ MB.Control.ReleaseDisc = function (parent, $disc) {
     };
 
     /**
-     * Disable the disc title field if there is only one disc.
+     * Disable the disc title field if there is only one disc and the
+     * title is not set.  If the "clear" argument is true, remove the
+     * disc title if present.
      */
-    self.disableDiscTitle = function () {
+    self.disableDiscTitle = function (clear) {
+        if (clear)
+        {
+            self.$title.val ('');
+        }
+
         if (self.$title.val () === '')
         {
             self.$title.attr ('disabled', 'disabled');
@@ -938,7 +948,7 @@ MB.Control.ReleaseTracklist = function () {
         return null;
     }
 
-    self.updateDiscTitle = function () {
+    self.updateDiscTitle = function (clear) {
         var pos = self.positions.length;
         var count = 0;
         var firstdisc = 1;
@@ -954,7 +964,7 @@ MB.Control.ReleaseTracklist = function () {
 
         if (count === 1)
         {
-            self.positions[firstdisc].disableDiscTitle ();
+            self.positions[firstdisc].disableDiscTitle (clear);
         }
         else if (self.positions[firstdisc])
         {
@@ -976,7 +986,7 @@ MB.Control.ReleaseTracklist = function () {
             $va.each (function (idx, elem) {
                 var $trkrow = $(elem).parents ('tr.track-artist-credit').prevAll('*:eq(0)');
 
-                var disc = $.trim ($trkrow.parents ('fieldset.advanced-disc').find ('legend').text ());
+                var disc = MB.utility.trim ($trkrow.parents ('fieldset.advanced-disc').find ('legend').text ());
 
                 if (!affected.hasOwnProperty (disc))
                 {
