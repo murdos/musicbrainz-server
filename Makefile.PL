@@ -19,6 +19,7 @@ requires 'Catalyst::Authentication::Credential::HTTP' => '1.009';
 requires 'Catalyst::Plugin::I18N'                     => '0.09';
 requires 'Catalyst::Plugin::Cache';
 requires 'Catalyst::Plugin::Unicode::Encoding'        => '1.2';
+requires 'Catalyst::Plugin::Session::Store::Memcached::Fast ' => '0.02';
 requires 'Catalyst::Runtime'                          => '5.90007';
 requires 'Catalyst::View::TT'                         => '0.29';
 requires 'CGI::Expand';
@@ -105,7 +106,6 @@ feature 'Default caching setup' =>
 feature 'Default session store/state management' =>
     -default                                     => 1,
     'Catalyst::Plugin::Session::State::Cookie'   => '0.11',
-    'Catalyst::Plugin::Session::Store::FastMmap' => '0.07',
     ;
 
 feature 'Developer features' =>

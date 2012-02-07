@@ -305,19 +305,14 @@ sub AMAZON_ASSOCIATE_TAG { '' }
 # If you're using multiple front-end webservers make sure they all connect to
 # the same memcached server.  Also make sure enough memory is configured for
 # memcached so sessions aren't evicted from the cache.
-sub SESSION_STORE { "Session::Store::Memcached" }
+sub SESSION_STORE { "Session::Store::Memcached::Fast" }
 sub SESSION_STORE_ARGS
 {
-    {
-        memcached_new_args => {
-            {
-                data => MEMCACHED_SERVERS(),
-                namespace => MEMCACHED_NAMESPACE(),
-                memcached_class => 'Cache::Memcached::Fast',
-            }
-        }
-        
-    }
+    return {
+        expires => 36000, # 10 hours
+        servers => MEMCACHED_SERVERS(),
+        namespace => MEMCACHED_NAMESPACE(),
+    };
 }
 
 # MusicBrainz::Server::Wizard saves wizard sessions in memcached,
