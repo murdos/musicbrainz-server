@@ -104,7 +104,7 @@ has '+function' => (
                      '<a href="' . $entity->affiliate_url . '">',
                      html_escape($entity->pretty_name),
                      '</a>',
-                     '[<a href="' . $c->uri_for_action('/url/show', [ $entity->gid ]) . '">',
+                     ' [<a href="' . $c->uri_for_action('/url/show', [ $entity->gid ]) . '">',
                      html_escape(l('info')),
                      '</a>]'
                  ));

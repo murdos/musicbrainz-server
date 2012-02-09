@@ -198,11 +198,14 @@
   <tbody>
   : for $release.mediums -> $medium {
     <tr class="subh">
-      <th> </th>
-      <th colspan="4">
-        <a href="<: $c.uri_for_action('/tracklist/show', [ $medium.tracklist_id ]) :>"
-           ><: $medium.format_name :> <: $medium.position :></a>
-      </th>
+      <td> </td>
+      <td colspan="4">
+        <a href="<: $c.uri_for_action('/tracklist/show', [ $medium.tracklist.id ]) :>">
+          <: html($medium.format_name) || l("Medium") :>
+          : html($medium.position);
+          : if $medium.name { raw(': ') ~ $medium.name }
+        </a>
+      </td>
     </tr>
     : for $medium.tracklist.tracks -> $track {
     <tr class="<: $~track.cycle('odd', 'ev') :>">
