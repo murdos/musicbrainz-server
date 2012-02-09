@@ -119,9 +119,9 @@ has '+function' => (
                      $entity->comment ? ( ' (' . html_escape($entity->comment) . ')') : ()
                  ));
             }
-            elsif ($entity.isa('MusicBrainz::Server::Entity::Editor')) {
+            elsif ($entity->isa('MusicBrainz::Server::Entity::Editor')) {
                 mark_raw(join('',
-                     '<a href="' . html_escape($c->uri_for_action('/user/show', [ $entity->name ])) . '">',
+                     '<a href="' . html_escape($c->uri_for_action('/user/profile', [ $entity->name ])) . '">',
                      html_escape($entity->name),
                      '</a>'
                  ));
