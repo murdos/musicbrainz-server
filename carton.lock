@@ -23956,8 +23956,8 @@
          "version" : "0.26"
       },
       "MooseX::Types::URI" : {
-         "dist" : "MooseX-Types-URI-0.02",
-         "module" : "MooseX::Types::URI",
+         "dist" : "MooseX-Types-URI-0.03",
+         "module" : "http://cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Types-URI-0.03.tar.gz",
          "mymeta" : {
             "abstract" : "unknown",
             "author" : [
@@ -24003,17 +24003,18 @@
                }
             },
             "release_status" : "stable",
-            "version" : "0.02"
+            "version" : "0.03"
          },
          "name" : "MooseX::Types::URI",
-         "pathname" : "http:/cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Types-URI-0.02.tar.gz",
+         "pathname" : "http:/cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Types-URI-0.03.tar.gz",
          "provides" : {
             "MooseX::Types::URI" : {
                "file" : "MooseX/Types/URI.pm",
-               "version" : "0.02"
-            }
+               "version" : "0.03"
+            },
+            "http://cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Types-URI-0.03.tar.gz" : {}
          },
-         "version" : "0.02"
+         "version" : "0.03"
       },
       "Mouse" : {
          "dist" : "Mouse-0.97",
