@@ -219,3 +219,12 @@ MB.utility.trim = function (str)
 {
     return str.replace (/\s+/g, " ").replace (/^ /, "").replace (/ $/, "");
 }
+
+MB.utility.renderArtistCredit = function (ac) {
+    var html = '';
+    $.each(ac.names, function(name) {
+        html += this.name + this.join_phrase
+    });
+
+    return html;
+}
